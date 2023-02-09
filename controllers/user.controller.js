@@ -97,12 +97,8 @@ const forgotPassword = async (req, res) => {
 };
 
 const resetPassword = async (req, res) => {
-  // const resetPasswordToken = crypto
-  //   .createHash('sha256')
-  //   .update(req.params.token)
-  //   .digest('hex');
-
   const resetPasswordToken = req.params.token;
+
   const userData = await User.findOne({
     resetPasswordToken,
     resetPasswordExpire: { $gt: Date.now() }
@@ -110,10 +106,6 @@ const resetPassword = async (req, res) => {
 
   if (!userData) {
     return res.status(400).send({ message: 'Invalid token' });
-  }
-
-  if (req.body.password !== req.body.confirmPassword) {
-    return res.status(400).send({ message: 'Passwords do not match' });
   }
 
   userData.password = req.body.password;
