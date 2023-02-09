@@ -22,6 +22,7 @@
       "lname": "vasa",
       "email": "vasavandit@gmail.com",
       "password": "vandit1234",
+      "role": "user",
     }
 ```
 
