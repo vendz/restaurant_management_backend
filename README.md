@@ -3,7 +3,7 @@
 ## Hosted Link
 
 ```
-    http://127.0.0.1:3000/
+    https://restro-management.vercel.app/
 ```
 
 ## Endpoints
@@ -11,7 +11,7 @@
 ### POST /user/signup
 
 ```
-    http://127.0.0.1:3000/user/register
+    https://restro-management.vercel.app/user/register
 ```
 
 #### Request Body
@@ -54,7 +54,7 @@
 ### POST /user/login
 
 ```
-    http://127.0.0.1:3000/user/login
+    https://restro-management.vercel.app/user/login
 ```
 
 #### Request Body
@@ -96,7 +96,7 @@
 ### POST /user/logout
 
 ```
-    http://127.0.0.1:3000/user/logout
+    https://restro-management.vercel.app/user/logout
 ```
 
 #### Headers
@@ -113,6 +113,68 @@
       "data": {
         "acknowledged": true,
         "deletedCount": 1
+      }
+    }
+```
+
+### POST /user/forgotpassword
+
+```
+    https://restro-management.vercel.app/user/forgotpassword
+```
+
+### Request Body
+
+```
+    {
+      "email": "vasavandit@gmail.com"
+    }
+```
+
+### Response
+
+```
+    {
+      "success": true,
+      "message": "Email sent to: vasavandit@gmail.com"
+    }
+```
+
+### PUT /user/resetpassword/:token
+
+```
+    http://restro-management.vercel.app/user/resetpassword/d65158cd52f9d6375906e266d9c763ea836020e7002e3fd01232af656a797e88
+```
+
+### Request Body
+
+```
+    {
+      "password": "123456789"
+    }
+```
+
+### Response
+
+```
+    {
+      "message": "Success",
+      "data": {
+        "user": {
+          "_id": "63e540e3497c2f237c85dd60",
+          "name": "vandit",
+          "lname": "vasa",
+          "email": "vasavandit@gmail.com",
+          "password": "$2a$10$DTAx9LWl/PcJnPm3O.Sqj.HtBLeo.liE9jqCtKjo3407clOL.MoPi",
+          "role": "user",
+          "__v": 0
+        },
+        "token": {
+          "val": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhc2F2YW5kaXRAZ21haWwuY29tIiwiaWF0IjoxNjc1OTc2MDIxfQ.ZEaBkqF2FSpRTPLx9OtbgQR1FtLkt5FOmw8rCxjJOuI",
+          "email": "vasavandit@gmail.com",
+          "_id": "63e55d557e5d2fcccc4aad7a",
+          "__v": 0
+        }
       }
     }
 ```
