@@ -123,7 +123,7 @@
     https://restro-management.vercel.app/user/forgotpassword
 ```
 
-### Request Body
+#### Request Body
 
 ```
     {
@@ -131,7 +131,7 @@
     }
 ```
 
-### Response
+#### Response
 
 ```
     {
@@ -146,7 +146,7 @@
     http://restro-management.vercel.app/user/resetpassword/d65158cd52f9d6375906e266d9c763ea836020e7002e3fd01232af656a797e88
 ```
 
-### Request Body
+#### Request Body
 
 ```
     {
@@ -154,7 +154,7 @@
     }
 ```
 
-### Response
+#### Response
 
 ```
     {
