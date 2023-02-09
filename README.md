@@ -19,9 +19,9 @@
 ```
     {
       "name": "vandit",
+      "lname": "vasa",
       "email": "vasavandit@gmail.com",
       "password": "vandit1234",
-      "phone": "8799002450"
     }
 ```
 
@@ -33,9 +33,10 @@
       "data": {
         "user": {
           "name": "vandit",
+          "lname": "vasa",
           "email": "vasavandit@gmail.com",
           "password": "$2a$10$QTnoaYoqzxs6.lL1yHqdYuAAv2weqAbXeVXQWctVGJexkm2Kys1KW",
-          "phone": "8799002450",
+          "role": "user"
           "_id": "63de552e16e351ad3c0a9df7",
           "__v": 0
         },
@@ -73,9 +74,10 @@
         "user": {
           "_id": "63de552e16e351ad3c0a9df7",
           "name": "vandit",
+          "lname": "vasa",
           "email": "vasavandit@gmail.com",
           "password": "$2a$10$QTnoaYoqzxs6.lL1yHqdYuAAv2weqAbXeVXQWctVGJexkm2Kys1KW",
-          "phone": "8799002450",
+          "role": "user",
           "__v": 0
         },
         "token": {
