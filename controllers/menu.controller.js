@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 
 const addItem = async (req, res) => {
   try {
-    const { name, price, description } = req.body;
+    const { name, price, quantity } = req.body;
     const newItem = {
       name: name,
       price: price,
-      description: description
+      quantity: quantity
     };
     const restro = await Menu.findOne({ restaurant: req.user._id });
     if (!restro) {
