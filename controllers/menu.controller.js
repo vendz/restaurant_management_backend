@@ -34,7 +34,7 @@ const deleteItem = async (req, res) => {
       return res.status(404).json({ error: 'Restaurant not found' });
     }
     const menu = restro.menu.filter(
-      (item) => item._id.toString() !== req.body.id.toString()
+      (item) => item._id.toString() !== req.params.id.toString()
     );
     await Menu.findOneAndUpdate(
       { restaurant: mongoose.Types.ObjectId(req.user._id) },

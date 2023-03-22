@@ -178,3 +178,70 @@
       }
     }
 ```
+
+### GET /menu/getall/:id
+
+```
+    https://restro-management.vercel.app/menu/getall/6419ed0747b12aee4330dbd1
+```
+
+#### Response
+
+```
+    [
+      {
+        "name": "paneer",
+        "price": 300,
+        "description": "best in town",
+        "_id": "641a034fecffef4c541f0352"
+      },
+      {
+        "name": "coffee",
+        "price": 660,
+        "description": "best coffee",
+        "_id": "641a0454e4ce2d1945c9ed90"
+      }
+    ]
+```
+
+### POST /menu/add
+
+```
+    https://restro-management.vercel.app/menu/add
+```
+
+#### Request Body
+
+```
+    {
+      "name": "sandwich",
+      "price": 250,
+      "description": "club sandwich"
+    }
+```
+
+#### Response
+
+```
+    {
+      "name": "sandwich",
+      "price": 250,
+      "description": "club sandwich"
+    }
+```
+
+### DELETE /menu/delete/:id
+
+```
+    https://restro-management.vercel.app/menu/delete
+```
+
+> here the `id` is of a particular menu item
+
+#### Response
+
+```
+    {
+      "message": "Item deleted successfully"
+    }
+```

@@ -8,7 +8,7 @@ const {
 const { auth, authorizeRoles } = require('../middleware/auth');
 
 router.post('/add', auth, authorizeRoles('restaurant'), addItem);
-router.delete('/delete', auth, authorizeRoles('restaurant'), deleteItem);
+router.delete('/delete/:id', auth, authorizeRoles('restaurant'), deleteItem);
 router.get('/getAll/:id', getItems);
 
 module.exports = router;
