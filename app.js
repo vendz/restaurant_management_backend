@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user.routes');
+const menuRoutes = require('./routes/menu.routes');
 
 const corsOptions = {
   origin: '*',
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/user', userRoutes);
+app.use('/menu', menuRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is Up and Running...');

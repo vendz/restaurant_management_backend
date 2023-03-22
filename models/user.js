@@ -30,8 +30,11 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
+    required: true,
+    enum: ["user", "restaurant"],
     default: "user",
   },
+  token: String,
   resetPasswordToken: String,
   resetPasswordExpire: Date
 });
