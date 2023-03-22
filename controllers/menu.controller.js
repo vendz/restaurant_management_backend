@@ -44,8 +44,12 @@ const deleteItem = async (req, res) => {
         runValidators: true,
         useFindAndModify: false
       }
-    );
-    res.status(200).json({ message: 'Item deleted successfully' });
+    ).then((doc) => {
+      if (!doc) {
+        return res.status(404).json({ error: 'Restaurant not found' });
+      }
+    });
+    return res.status(200).json({ message: 'Item deleted successfully' });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
