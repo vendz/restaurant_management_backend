@@ -115,10 +115,20 @@ const resetPassword = async (req, res) => {
   jwtToken(userData, res);
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    return res.status(200).send(users);
+  } catch (err) {
+    return res.status(400).send({ message: 'Error in getting users', err });
+  }
+};
+
 module.exports = {
   register,
   login,
   logout,
   forgotPassword,
-  resetPassword
+  resetPassword,
+  getAllUsers
 };
