@@ -245,3 +245,72 @@
       "message": "Item deleted successfully"
     }
 ```
+
+### POST /order/create
+
+```
+    https://restro-management.vercel.app/order/create
+```
+
+#### Request Body
+
+```
+    {
+      "restaurant": "641a05018e92549ceb687922",
+      "customer": "641aa05ae36f5cfa9f846939",
+      "items": [
+        {
+          "name": "641aa0dee36f5cfa9f846941",
+          "quantity": 3
+        }
+      ]
+    }
+```
+
+#### Response
+
+```
+    {
+      "restaurant": "641a05018e92549ceb687922",
+      "customer": "641aa05ae36f5cfa9f846939",
+      "items": [
+        {
+          "name": "641aa0dee36f5cfa9f846941",
+          "quantity": 3,
+          "_id": "641c4c6f3d26b986b6832f5c"
+        }
+      ],
+      "status": "pending",
+      "_id": "641c4c6f3d26b986b6832f5b",
+      "__v": 0
+    }
+```
+
+### GET /order/getAll
+
+```
+    https://restro-management.vercel.app/order/getAll
+```
+
+> pass bearer token
+
+#### Response
+
+```
+    [
+      {
+        "_id": "641c4c6f3d26b986b6832f5b",
+        "restaurant": "641a05018e92549ceb687922",
+        "customer": "641aa05ae36f5cfa9f846939",
+        "items": [
+          {
+            "name": "641aa0dee36f5cfa9f846941",
+            "quantity": 3,
+            "_id": "641c4c6f3d26b986b6832f5c"
+          }
+        ],
+        "status": "pending",
+        "__v": 0
+      }
+    ]
+```
