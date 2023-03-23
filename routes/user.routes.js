@@ -15,6 +15,6 @@ router.post('/login', login);
 router.post('/logout', auth, logout);
 router.post('/forgotpassword', forgotPassword);
 router.put('/resetpassword/:token', resetPassword);
-router.get('/getAll', auth, authorizeRoles('restaurant'), getAllUsers);
+router.get('/getAll', auth, authorizeRoles('user'), getAllUsers);
 
 module.exports = router;
