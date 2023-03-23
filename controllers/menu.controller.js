@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 
 const addItem = async (req, res) => {
   try {
-    const { name, price, quantity } = req.body;
+    const { name, price, description } = req.body;
     const newItem = {
       name: name,
       price: price,
-      quantity: quantity
+      description: description
     };
     const restro = await Menu.findOne({ restaurant: req.user._id });
     if (!restro) {
@@ -16,11 +16,11 @@ const addItem = async (req, res) => {
         menu: [newItem]
       });
       await newMenu.save();
-      res.status(201).json(newItem);
+      res.status(201).json(newMenu.menu[0]);
     } else {
       restro.menu.push(newItem);
-      await restro.save({ validateBeforeSave: false });
-      res.status(201).json(newItem);
+      const addedItems = await restro.save({ validateBeforeSave: false });
+      res.status(201).json(addedItems.menu[addedItems.menu.length - 1]);
     }
   } catch (error) {
     res.status(500).json({ error: error.message });

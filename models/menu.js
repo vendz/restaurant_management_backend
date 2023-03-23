@@ -21,10 +21,10 @@ const menuSchema = new Schema({
         maxLength: [30, 'Your price cannot exceed 30 characters'],
         minLength: [3, 'Your price must be at least 3 characters long']
       },
-      quantity: {
-        type: Number,
-        required: [true, 'Quantity is required'],
-        default: 1
+      description: {
+        type: String,
+        required: [true, 'Description is required'],
+        minLength: [3, 'Your description must be at least 3 characters long']
       }
     }
   ]
